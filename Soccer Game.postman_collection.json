@@ -1,0 +1,264 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Soccer Game",
+		"_postman_id": "57b0b8ad-8b6f-d77b-9ba0-00ead4a7a5a0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign up copy",
+			"request": {
+				"url": "http://localhost:8080/api/auth/signup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGlmZXR2YWNpNjFAaG90bWFpbC5jb20iLCJyb2xlIjpbeyJhdXRob3JpdHkiOiJST0xFX1VTRVIifV0sImlhdCI6MTYzNTkyOTYzMiwiZXhwIjoxNjM2MDE2MDMyfQ.y8fg6ftUzfaOTIBIScPCWefMkxEsZMs56PoYzS9KcfPSYmrVgTGmPIv8O4kh29fmeHvDLgczuDcpYoOplQk2CA",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n    \"email\":\"alifetvaci6112224545@hotmail.com\",\n    \"username\": \"alifetvaci6112224545@hotmail.com\",\n    \"password\":\"admin\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sign in copy",
+			"request": {
+				"url": "http://localhost:8080/api/auth/signin",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"alifetvaci6112224545@hotmail.com\",\n    \"password\":\"admin\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Players",
+			"request": {
+				"url": "http://localhost:8080/api/player",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGlmZXR2YWNpNjExMjIyNDU0NUBob3RtYWlsLmNvbSIsInJvbGUiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjM2Mzc0MDE0LCJleHAiOjE2MzY0NjA0MTR9.cr1EaHhTBM7Tl0_6WmZYZFS9RYlJXJTuKfGC-QsRapydpdki_LGbI8oWQCrxxXZr5II0p2LMISk8IVGL5wo_kg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Player",
+			"request": {
+				"url": "http://localhost:8080/api/players",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"ali\",\n    \"lastname\": \"fetvaci\",\n    \"country\": \"TR\",\n    \"age\": 25,\n    \"marketValue\": 1000000\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add player transfer list",
+			"request": {
+				"url": "http://localhost:8080/api/transfer/player",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGlmZXR2YWNpNjExMjIyNDU0NUBob3RtYWlsLmNvbSIsInJvbGUiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjM2NDM5NjI3LCJleHAiOjE2MzY1MjYwMjd9.34zFpQaebsYzfxPf_vdG2DeCk1biYug5Js5HvAZG45a5ttv2EojO1RbH8rgOnQrac9YOz3TmqfWvKeuUsEn7Ug",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerId\": \"618a15fc51758d16ab45781b\",\n    \"price\": 25000\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get Transfers",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/api/player/transfers?country=TR&min-value=24999&max-value=26000&name=Play",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"player",
+						"transfers"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "TR",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "min-value",
+							"value": "24999",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "max-value",
+							"value": "26000",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "name",
+							"value": "Play",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOlt7ImF1dGhvcml0eSI6IlJPTEVfQURNSU4ifV0sImlhdCI6MTYzNjM3NDc4MSwiZXhwIjoxNjM2NDYxMTgxfQ.61zCRUp8IiLEiFmQenUShAshpNS2MRc2aHAAwPj36yb5cCWeJQ0SicP0X-LC_ovPT_gi-nJ8nghK0ACtmKSw4w",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"playerId\": \"61890f8cbd323241a4f90bf3\",\n    \"price\": 25000\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "transfer player",
+			"request": {
+				"url": "http://localhost:8080/api/player/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"61818863d2ceb27e4184b34c\",\n    \"firstname\": \"ali\",\n    \"lastname\": \"fetvaci\",\n    \"country\": \"TR\",\n    \"age\": 25,\n    \"marketValue\": 1000000\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Team",
+			"request": {
+				"url": "http://localhost:8080/api/user/team/6184dcaa5e774d6d8d49cb28",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGlmZXR2YWNpNjExMjIyQGhvdG1haWwuY29tIiwicm9sZSI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJpYXQiOjE2MzYzNjk0MzQsImV4cCI6MTYzNjQ1NTgzNH0.TfNHp-rdZ_21uLPCKgY_NEZE49rXVN3Re_hG0N1DY_1cqfHSv_RoxpWTnZPxtUBdStK3QLrZoXlkHMs5knTzCQ",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n    \"name\": \"fetvaci2224683841\",\n    \"country\": \"TR\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"url": "http://localhost:8080/api/user",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGlmZXR2YWNpNjExMjIyNDU0NUBob3RtYWlsLmNvbSIsInJvbGUiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwiaWF0IjoxNjM2NTc3MDkwLCJleHAiOjE2MzY2NjM0OTB9.FXbYvIxcn9ViA21yq4XpfvqBDY5KJD8Wpke2yQenlhZh39AkLZuIWOPUdGXRHFrnDVtfS2XfJlNNdvUO-ZxquQ",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"url": "http://localhost:8080/api/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"username\": \"alifet\",\n    \"email\": \"ali.fetvaci1@ibtech.com.tr\",\n    \"password\": \"Tr61Tr\"\n   \n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
